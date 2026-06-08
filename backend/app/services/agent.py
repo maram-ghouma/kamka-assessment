@@ -45,7 +45,7 @@ def run_agent(question: str, document_ids: list[str], session_id: str = "default
     tools = [retrieval_tool, summarize_text]
     tools_map = {t.name: t for t in tools}
 
-    llm_with_tools = llm.bind_tools(tools)
+    llm_with_tools = llm.bind_tools(tools, parallel_tool_calls=False)
 
     history = get_history(session_id)
 
