@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.api import documents, agent
 
-app = FastAPI()
+app = FastAPI(title="Kamka AI Assistant", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -10,6 +11,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(documents.router)
+app.include_router(agent.router)
 
 
 @app.get("/health")
