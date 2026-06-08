@@ -95,11 +95,12 @@ Frontend runs at [http://localhost:3000](http://localhost:3000) and expects the 
 
 ### Backend (`backend/.env`)
 
-| Variable | Description |
+| Variable | Value |
 |---|---|
-| `OPENAI_API_KEY` | Your OpenAI API key |
-| `CHROMA_PERSIST_DIR` | Path to persist the vector store (default: `./chroma_db`) |
-
+| `GROQ_API_KEY` | Your Groq API key — get one free at [console.groq.com](https://console.groq.com) |
+| `CHROMA_PATH` | `./chroma_db` |
+| `EMBEDDING_MODEL` | `all-MiniLM-L6-v2` |
+| `LLM_MODEL` | `llama-3.3-70b-versatile` |
 ### Frontend
 
 | Variable | Default | Description |
